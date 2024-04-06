@@ -6,6 +6,6 @@ document.addEventListener("DOMContentLoaded", function() {
         jugador.classList.add("jugadorSaltar");
         setTimeout(function(){
             jugador.classList.remove("jugadorSaltar");
-        }, 1000); // Duración de la animación en milisegundos
+        }, 1000); 
     });
 });

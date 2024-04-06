@@ -6,8 +6,7 @@ body {
     width: 100%;
     height: 720px;
     position: relative;
-    overflow: hidden; /* Para ocultar el contenido que se desborda del contenedor */
-}
+    overflow: hidden; 
 
 #jugador {
     width: 100px;
@@ -24,7 +23,7 @@ body {
 
 .fondo {
     position: absolute;
-    width: 200%; /* Doble del ancho del contenedor para que la imagen se repita */
+    width: 200%; 
     height: 100%;
     left: 0;
     top: 0;
@@ -39,12 +38,12 @@ body {
 #jugadorSaltar {
     position: absolute;
     top: 600px;
-    left:5%; /* Alinear el botón horizontalmente */
-    transform: translateX(-50%); /* Centrar horizontalmente el botón */
+    left:5%; 
+    transform: translateX(-50%);
     border: none;
     background: none;
-    cursor: pointer; /* Cambiar el cursor al pasar por encima del botón */
-    z-index: 999; /* Asegurar que el botón esté por encima del jugador */
+    cursor: pointer;
+    z-index: 999;
 }
 
 #jugadorSaltar img {
@@ -52,10 +51,24 @@ body {
     height: 100px;
 }
 .jugadorSaltar{
-    
     animation: jugadorSaltar 1s linear infinite ;
 }
 
+#BotonPausa{
+    position: absolute;
+    top: 0px;
+    left:5%; 
+    transform: translateX(-50%); 
+    border: none;
+    background: none;
+    cursor: pointer; 
+    z-index: 999; 
+}
+
+#BotonPausa img {
+    width: 100px;
+    height: 100px;
+}
 @keyframes FondoMovimiento {
     0% {
         transform: translateX(0%);
