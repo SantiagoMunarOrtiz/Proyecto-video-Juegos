@@ -1,0 +1,47 @@
+body{
+    margin: 0px;
+
+}
+
+#board{
+    background-color: rgb(183, 151, 213);
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+
+#jugador{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 10px;
+    left: 50px;
+
+}
+#jugador img{
+    width: 100%;
+    height: 100%;
+}
+
+#fondo img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+.jugadorSaltar{
+    animation: jugadorSaltar 3s linear infinite ;
+}
+
+@keyframes jugadorSaltar{
+    0%{
+        bottom:10px
+    }
+    40%, 60%{
+        bottom:200px
+    }
+
+   
+
+}
