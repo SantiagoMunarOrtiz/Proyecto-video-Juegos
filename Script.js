@@ -9,3 +9,10 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 1000); 
     });
 });
+
+
+
+function Perder() {
+    const confirmacion = window.confirm('Perdiste :(');
+  
+  }
