@@ -23,8 +23,8 @@ body {
 
 #Hogo {
 
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     position: absolute;
     bottom: 10px;
     left: 500px;
@@ -33,7 +33,7 @@ body {
 #Hogo img {
     width: 100%;
     height: 100%;
-    animation: MovimientoHogo 1s linear infinite;
+    animation: MovimientoHogo 5s linear infinite;
 
 }
 
@@ -51,7 +51,7 @@ body {
 #Murcielago img {
     width: 100%;
     height: 100%;
-    animation: MovimientoMur 2s linear infinite;
+    animation: MovimientoHogo 8s linear infinite;
 
 }
 
@@ -114,7 +114,7 @@ body {
 
 @keyframes jugadorSaltar {
     0% {
-        bottom: 10px;
+        bottom: 80px;
     }
     40%, 60% {
         bottom: 200px;
@@ -123,10 +123,11 @@ body {
 
 @keyframes MovimientoHogo {
     0% {
-        bottom: 10px;
+        transform: translateX(600%);
     }
-    40%, 60% {
-        bottom: 200px;
+    
+    100% {
+        transform: translateX(-500%);
     }
 }
 
