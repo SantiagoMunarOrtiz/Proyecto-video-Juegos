@@ -4,7 +4,7 @@ body {
 
 #board {
     width: 100%;
-    height: 500px;
+    height: 720px;
     position: relative;
     overflow: hidden; /* Para ocultar el contenido que se desborda del contenedor */
 }
@@ -14,7 +14,7 @@ body {
     height: 100px;
     position: absolute;
     bottom: 10px;
-    left: 50px;
+    left: 250px;
 }
 
 #jugador img {
@@ -33,13 +33,13 @@ body {
 .fondo img {
     width: 100%;
     height: 100%;
-    animation: FondoMovimiento 10s linear infinite;
+    animation: FondoMovimiento 5s linear infinite;
 }
 
 #jugadorSaltar {
     position: absolute;
-    top: 10px;
-    left: 50%; /* Alinear el botón horizontalmente */
+    top: 600px;
+    left:5%; /* Alinear el botón horizontalmente */
     transform: translateX(-50%); /* Centrar horizontalmente el botón */
     border: none;
     background: none;
