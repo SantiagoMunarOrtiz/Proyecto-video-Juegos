@@ -9,3 +9,24 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 1000); // Duración de la animación en milisegundos
     });
 });
+
+
+const canvas = document.createElement('canvas')
+canvas.width  = innerWidth
+canvas.height= innerHeight
+document.body.appendChild(canvas)
+const ctx = canvas.getContext('2d')
+
+class Sprite {
+    constructor({animations = [,data]}){
+        this.animations = animations
+        this.animations = "idle"
+        this.frame = {}
+        this.frameIndex = -1 
+        this.data = data
+
+    }
+    advance(){
+        if)frames
+    }
+}

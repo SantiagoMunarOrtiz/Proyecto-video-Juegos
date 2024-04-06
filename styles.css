@@ -4,7 +4,7 @@ body {
 
 #board {
     width: 100%;
-    height: 720px;
+    height: 950px;
     position: relative;
     overflow: hidden; /* Para ocultar el contenido que se desborda del contenedor */
 }
@@ -50,6 +50,17 @@ body {
 #jugadorSaltar img {
     width: 100px;
     height: 100px;
+}
+
+#Hogo{
+    z-index: 10000;
+    height: 100px;
+    width: 100px;
+    background-color:transparent;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
 }
 .jugadorSaltar{
     
