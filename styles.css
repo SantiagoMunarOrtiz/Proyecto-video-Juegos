@@ -9,8 +9,9 @@ body {
     overflow: hidden; 
 }
 #jugador {
-    width: 100px;
-    height: 100px;
+    background-color: rgba(255, 255, 255, 0.5); 
+    width: 150px;
+    height: 150px;
     position: absolute;
     bottom: 10px;
     left: 250px;
@@ -22,53 +23,52 @@ body {
 }
 
 #Hogo {
+    background-color: rgba(255, 255, 255, 0.5); 
 
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 90px;
     position: absolute;
     bottom: 10px;
     left: 500px;
-}
-
-#Hogo img {
-    width: 100%;
-    height: 100%;
     animation: MovimientoHogo 5s linear infinite;
 
 }
 
+#Hogo img {
+    width: 100px;
+    height: 100px;
+}
 
 #Murcielago {
+    animation: MovimientoHogo 8s linear infinite;
 
     width: 150px;
     height: 150px;
     position: absolute;
     bottom: 10px;
     left: 500px;
-    top: 430px;
+    top: 350px;
 }
 
 #Murcielago img {
     width: 100%;
     height: 100%;
-    animation: MovimientoHogo 8s linear infinite;
 
 }
-
-.fondo {
+#fondo {
+    background-image: url('Fondo.jpg');
     position: absolute;
     width: 200%; 
     height: 100%;
     left: 0;
     top: 0;
-}
+    animation: FondoMovimiento 6s linear infinite;
 
+}
 .fondo img {
     width: 100%;
     height: 100%;
-    animation: FondoMovimiento 5s linear infinite;
 }
-
 #jugadorSaltar {
     position: absolute;
     top: 600px;
@@ -79,7 +79,6 @@ body {
     cursor: pointer;
     z-index: 999;
 }
-
 #jugadorSaltar img {
     width: 100px;
     height: 100px;
@@ -87,22 +86,60 @@ body {
 .jugadorSaltar{
     animation: jugadorSaltar 1s linear infinite ;
 }
-
 #BotonPausa{
     position: absolute;
     top: 0px;
-    left:5%; 
+    left:50px; 
     transform: translateX(-50%); 
     border: none;
     background: none;
     cursor: pointer; 
-    z-index: 999; 
-}
+    z-index: 999; }
 
-#BotonPausa img {
+#BotonPausa img{
+    width: 80px;
+    height: 80px;
+    top: 0px;
+}
+#BotonPlay{
+    position: absolute;
+    top: 0px;
+    left:150px; 
+    transform: translateX(-50%); 
+    border: none;
+    background: none;
+    cursor: pointer; 
+    z-index: 999; }
+#BotonPlay img{
     width: 100px;
     height: 100px;
+    top: 0px;
 }
+#BotonReanudar{
+    position: absolute;
+    top: 0px;
+    left:250px; 
+    transform: translateX(-50%); 
+    border: none;
+    background: none;
+    cursor: pointer; 
+    z-index: 999; }
+#BotonReanudar img{
+    width: 90px;
+    height: 90px;
+    top: 0px;
+}
+.Contenedor_contador {
+    text-align: center;
+    font-size: 50px;
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* Fondo semi-transparente */
+}
+
 @keyframes FondoMovimiento {
     0% {
         transform: translateX(0%);
@@ -114,28 +151,29 @@ body {
 
 @keyframes jugadorSaltar {
     0% {
-        bottom: 80px;
-    }
-    40%, 60% {
-        bottom: 200px;
-    }
-}
+        bottom: 0px;
 
+    }
+    30%, 70% {
+        bottom: 300px;
+
+    }
+
+}
 @keyframes MovimientoHogo {
     0% {
-        transform: translateX(600%);
+        transform: translateX(1100%);
     }
-    
+
     100% {
-        transform: translateX(-500%);
+        transform: translateX(-700%);
     }
 }
-
-
 @keyframes MovimientoMur {
     0% {
         transform: translateX(600%);
     }
+    
     100% {
         transform: translateX(-500%);
     }
