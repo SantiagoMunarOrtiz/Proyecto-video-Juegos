@@ -15,44 +15,54 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 1000); 
     });
 });
+function PararInterContador(){
+    clearInterval(intervaloContador);
+}
     BotonPausa.addEventListener("click", ()=>{
         Pausa(); 
     })
+
     function Pausa(){
         Hogo.style.animationPlayState="paused";
         Murcielago.style.animationPlayState="paused";
         jugador.style.animationPlayState="paused";
         fondo.style.animationPlayState="paused";
-        clearInterval(intervaloContador);
+        PararInterContador();
     }
     BotonPlay.addEventListener("click", ()=>{
         Play(); 
     })
-    
+    interContador();
+
     function Play(){
         Hogo.style.animationPlayState="running";
         Murcielago.style.animationPlayState="running";
         jugador.style.animationPlayState="running";
         fondo.style.animationPlayState="running";
-
-        intervaloContador = setInterval(()=>{
-            contador++;
-            document.getElementById("contador").innerText=contador;
-        }, 100);
+        interContador();
+       
     }
- intervaloContador = setInterval(()=>{
+   
+    function interContador(){
+    intervaloContador = setInterval(()=>{
     contador++;
     document.getElementById("contador").innerText=contador;
 }, 100);
+    }
 
-BotonPlay.addEventListener("click", ()=>{
-    Play(); 
-})
 BotonReanudar.addEventListener("click", ()=>{
-    BotonReanudar();
+    
+    Reanudar(); 
+    
 })
 
-function BotonReanudar(){
+function Reanudar(){
+    Play();
+    contador=0;
+    
+    Hogo.classList.remove("HogoReinicio");
+    Hogo.classList.add("HogoReinicio");
+
     alert("Se va a reiniciar el juego .-.")
 }
 
@@ -69,4 +79,13 @@ function Perder() {
 
     }
 }
+function irANiveles() {
+    window.location.href = "Niveles.html";
+}
  
+
+/*/MENÚ NIVELES*/
+function toggleMenu() {
+    var menuList = document.getElementById("menuList");
+    menuList.style.display = menuList.style.display === "block" ? "none" : "block";
+}
