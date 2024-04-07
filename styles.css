@@ -94,9 +94,21 @@ body {
     top: 0px;
 }
 
+.texto-superpuesto {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px; 
+    font-family: Arial, sans-serif;
+    text-align: center; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1000; }
+
+
 #BotonPortal{
     position: absolute;
-    
     transform: translateX(-50%); 
     border: none;
     background: none;
