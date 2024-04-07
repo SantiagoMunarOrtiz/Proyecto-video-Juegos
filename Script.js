@@ -90,7 +90,7 @@ function Home() {
 }
 
 function CerrarSesion() {
-    window.location.href = "CerrarS";
+    window.location.href = "CerrarSesion.html";
 }
 function InciarSesion() {
     window.location.href = "IniciarSesion.html";
