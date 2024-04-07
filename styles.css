@@ -1,7 +1,6 @@
 body {
     margin: 0;
 }
-
 #board {
     width: 100%;
     height: 742px;
@@ -9,55 +8,44 @@ body {
     overflow: hidden; 
 }
 #jugador {
-    background-color: rgba(255, 255, 255, 0.5); 
     width: 150px;
     height: 150px;
     position: absolute;
     bottom: 10px;
     left: 250px;
 }
-
 #jugador img {
     width: 100%;
     height: 100%;
 }
-
-.HogoReinicio{
-    animation: MovimientoHogo 5s linear infinite;
+.Reinicio_Obstaculos{
+    animation: MovimientoObtaculos 5s linear infinite;
 }
-
 #Hogo {
-    background-color: rgba(255, 255, 255, 0.5); 
-
-    width: 60px;
-    height: 90px;
+    width: 150px;
+    height: 150px;
     position: absolute;
     bottom: 10px;
     left: 500px;
-    animation: MovimientoHogo 5s linear infinite;
-
+    top:650px ; 
+    animation: MovimientoObtaculos 5s linear infinite;
 }
-
 #Hogo img {
     width: 100px;
     height: 100px;
 }
-
 #Murcielago {
-    animation: MovimientoHogo 8s linear infinite;
-
     width: 150px;
     height: 150px;
     position: absolute;
     bottom: 10px;
     left: 500px;
     top: 350px;
+    animation: MovimientoObtaculos 5s linear infinite;
 }
-
 #Murcielago img {
     width: 100%;
     height: 100%;
-
 }
 #fondo {
     background-image: url('Fondo.jpg');
@@ -119,24 +107,25 @@ body {
     height: 100px;
     top: 0px;
 }
-
 #BotonConfiguracion{
+    
     position: absolute;
-    top: 0px;
-    right:-30px; 
+    top: 10px;
+    right:-40px; 
     transform: translateX(-50%); 
     border: none;
     background: none;
     cursor: pointer; 
     z-index: 999; }
-
 #BotonConfiguracion img{
     width: 100px;
     height: 100px;
-    top: 0px;
-}
+    top: 60px;
+    left: 10px;
 
+}
 #BotonReanudar{
+    
     position: absolute;
     top: 0px;
     left:250px; 
@@ -150,17 +139,14 @@ body {
     height: 90px;
     top: 0px;
 }
-.Contenedor_contador {
-    text-align: center;
-    font-size: 50px;
-    margin-top: 20px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.5); /* Fondo semi-transparente */
+.fondoNiveles {
+    width: 100%; 
+    height: 100%;
+    background-image: url('fondo2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
-
 @keyframes FondoMovimiento {
     0% {
         transform: translateX(0%);
@@ -169,7 +155,6 @@ body {
         transform: translateX(-50%);
     }
 }
-
 @keyframes jugadorSaltar {
     0% {
         bottom: 0px;
@@ -181,27 +166,16 @@ body {
     }
 
 }
-@keyframes MovimientoHogo {
-    0% {
-        transform: translateX(1800%);
-    }
 
-    100% {
-        transform: translateX(-900%);
-    }
-}
-@keyframes MovimientoMur {
+@keyframes MovimientoObtaculos {
     0% {
-        transform: translateX(600%);
+        transform: translateX(900%);
     }
     
     100% {
         transform: translateX(-500%);
     }
 }
-
-
-
 /*/MENÚ NIVLES*/
 
 .menu {
@@ -245,5 +219,32 @@ body {
 
 .menu-list li a:hover {
     background-color: #f4f4f4;
+    
 }
 
+.BT_nivel {
+    position: absolute;
+    font-family: "Playfair Display", serif;
+    display: inline-block;
+    text-align: center;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    width: 600px;
+    height: 60px;
+  }
+  .BT_nivel-x {
+    font-size: 40px;
+    color: #fff;
+    background-color: #8b1a87;
+    border-color: #620155;
+  }
+  
+  .BT_nivel-x:hover {
+    color: #045646;
+    background-color: #23e466;
+    border-color: #50e68e;
+    box-shadow: 0 0 10px 5px rgba(186, 248, 94, 0.7); 
+
+  }
+  

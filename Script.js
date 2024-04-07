@@ -4,9 +4,6 @@ const jugadorSaltar = document.getElementById("jugadorSaltar");
 const Murcielago = document.getElementById("Murcielago");
 const fondo = document.getElementById("fondo");
 
-let contador = 0;
-let intervaloContador;
-
 document.addEventListener("DOMContentLoaded", function() {
     jugadorSaltar.addEventListener("click", function(){
         jugador.classList.add("jugadorSaltar");
@@ -15,75 +12,89 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 1000); 
     });
 });
-function PararInterContador(){
-    clearInterval(intervaloContador);
-}
     BotonPausa.addEventListener("click", ()=>{
         Pausa(); 
     })
-
     function Pausa(){
         Hogo.style.animationPlayState="paused";
         Murcielago.style.animationPlayState="paused";
         jugador.style.animationPlayState="paused";
         fondo.style.animationPlayState="paused";
-        PararInterContador();
     }
     BotonPlay.addEventListener("click", ()=>{
         Play(); 
     })
-    interContador();
-
     function Play(){
         Hogo.style.animationPlayState="running";
         Murcielago.style.animationPlayState="running";
         jugador.style.animationPlayState="running";
         fondo.style.animationPlayState="running";
-        interContador();
        
     }
-   
-    function interContador(){
-    intervaloContador = setInterval(()=>{
-    contador++;
-    document.getElementById("contador").innerText=contador;
-}, 100);
-    }
-
 BotonReanudar.addEventListener("click", ()=>{
-    
+    Pausa(); 
     Reanudar(); 
-    
 })
-
 function Reanudar(){
-    Play();
-    contador=0;
-    
-    Hogo.classList.remove("HogoReinicio");
-    Hogo.classList.add("HogoReinicio");
-
+    Hogo.classList.remove("Reinicio_Obstaculos");
     alert("Se va a reiniciar el juego .-.")
+    Hogo.classList.add("Reinicio_Obstaculos");  
+    Play();  
 }
 
+function Perder(jugador, obstaculo) {
+  var Perder=false;
+  if(obstaculo.x + obstaculo.width >= jugador.x && obstaculo.x < jugador.x + jugador.width){
+    if(obstaculo.y + obstaculo.height >= jugador.y && obstaculo.y < jugador.y + jugador.height){
+        Perder=true;
+     }
+  }
 
-function Perder() {
-    var jugadorLeft = parseInt(jugador.style.left);
-    var jugadorTop = parseInt(jugador.style.top);
-    var hogoLeft = parseInt(Hogo.style.left);
-    var hogoTop = parseInt(Hogo.style.top);
+  if(obstaculo.x <= jugador.x && obstaculo.x + obstaculo.width >= jugador.x + jugador.width){
+    if(obstaculo.y <= jugador.y && obstaculo.y + obstaculo.height >= jugador.y + jugador.height){
+        Perder=true;
+}
+  }
 
-    if (jugadorLeft === hogoLeft && jugadorTop === hogoTop) {
-        alert("¡Perdiste!");
+  if(jugador.x <= obstaculo.x && jugador.x + jugador.width >= obstaculo.x + obstaculo.width){
+    if(jugador.y<= obstaculo.y && jugador.y + jugador.height >= obstaculo.y + obstaculo.height){
+        Perder=true;
+}
+  }
+return Perder;
+}
+function VerificarPerder() {
+    if (Perder(jugador, Hogo)) {
         console.log("¡Perdiste!");
-
+        alert("Perdiste");
+    } else {
+        console.log("¡Sigue jugando!");
     }
 }
+VerificarPerder() ;
+
 function irANiveles() {
     window.location.href = "Niveles.html";
 }
- 
 
+function continuarNivel() {
+    window.location.href = "Juego.html";
+}
+
+function Comentario() {
+    window.location.href = "Comentarios.html";
+}
+
+function Home() {
+    window.location.href = "Home.html";
+}
+
+function CerrarSesion() {
+    window.location.href = "CerrarS";
+}
+function InciarSesion() {
+    window.location.href = "IniciarSesion.html";
+}
 /*/MENÚ NIVELES*/
 function toggleMenu() {
     var menuList = document.getElementById("menuList");

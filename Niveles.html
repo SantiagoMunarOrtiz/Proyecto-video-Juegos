@@ -3,21 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Desplegable</title>
+    <title>Menu niveles</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+    <div id="board" class="fondoNiveles ">
 <div class="menu">
     <button class="menu-btn" onclick="toggleMenu()">Menú</button>
     <ul class="menu-list" id="menuList">
-        <li><a href="#">Nivel: SUMA</a></li>
-        <li><a href="#">Nivel: Resta</a></li>
-        <li><a href="#">Nivel: Multiplicación</a></li>
-        <li><a href="#">Nivel: División</a></li>
+        <li><a href="#">Iniciar sesión</a></li>
+        <li><a href="#">Cerrar sesión</a></li>
+        <li><a href="#">Comentarios</a></li>
+        <li><a href="#">Inicio</a></li>
     </ul>
 </div>
 
+
+<div id="jugador" class="jugadorSaltar" style="width: 300px;height: 300px;">
+    <img src="Jugador.png" alt="jugador">
+</div>
+
+<button type="button" class="BT_nivel BT_nivel-x" style="left:700px ;top: 250px;">Sumas</button>
+<button type="button" class="BT_nivel BT_nivel-x" style="left:700px ;top: 350px;">Restas</button>
+<button type="button" class="BT_nivel BT_nivel-x" style="left:700px ;top: 450px;">Multiplicación</button>
+<button type="button" class="BT_nivel BT_nivel-x" style="left:700px ;top: 550px;">División</button>
+<button id="BotonReanudar" onclick="continuarNivel()" style="left: 100px;top: 600px;" ><img src="BotonSiguiente.png" alt="BotonReanudar"></button>
+
+
+
+
+</div>
 <script src="script.js"></script>
 </body>
 </html>
