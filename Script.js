@@ -95,6 +95,20 @@ function CerrarSesion() {
 function InciarSesion() {
     window.location.href = "IniciarSesion.html";
 }
+
+function Sumas() {
+    window.location.href = "Sumas.html";
+}
+function Restas() {
+    window.location.href = "Restas.html";
+}
+function Multiplicaciones() {
+    window.location.href = "Multiplicaciones.html";
+}
+function Divisiones() {
+    window.location.href = "Division.html";
+}
+
 /*/MENÚ NIVELES*/
 function toggleMenu() {
     var menuList = document.getElementById("menuList");
