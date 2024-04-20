@@ -89,8 +89,8 @@ function Home() {
     window.location.href = "Home.html";
 }
 
-function CerrarSesion() {
-    window.location.href = "CerrarSesion.html";
+function Registro() {
+    window.location.href = "Registro.html";
 }
 function InciarSesion() {
     window.location.href = "IniciarSesion.html";
@@ -107,6 +107,9 @@ function Multiplicaciones() {
 }
 function Divisiones() {
     window.location.href = "Division.html";
+}
+function paginaIncio() {
+    window.location.href = "PaginaDeInicio.html";
 }
 
 /*/MENÚ NIVELES*/
