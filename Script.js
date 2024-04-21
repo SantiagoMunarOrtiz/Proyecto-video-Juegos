@@ -109,7 +109,7 @@ function Divisiones() {
     window.location.href = "Division.html";
 }
 function paginaIncio() {
-    window.location.href = "PaginaDeInicio.html";
+    window.location.href = "PaginaDeInicio.html ";
 }
 
 /*/MENÚ NIVELES*/

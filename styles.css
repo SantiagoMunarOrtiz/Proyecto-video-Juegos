@@ -2,7 +2,25 @@ body {
     margin: 0;
 }
 
-
+.containerIncio {
+    position: absolute;
+    left: 40%;
+    top: 30%;
+    align-items: center;
+    color: white;
+    width: 300px;
+    
+}
+#Carganivel {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    width: 40%;
+    height: 40%;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
 .form-containerIncio {
     position: relative;
     left: 40%;
@@ -14,9 +32,8 @@ body {
 }
 #board {
     width: 100%;
-    max-height: max-content;
-    height: 790px;
-    position: relative;
+    height: 100%;
+    position: absolute;
     overflow: hidden; 
 }
 #jugador {
@@ -53,7 +70,7 @@ body {
     bottom: 10px;
     left: 500px;
     top: 350px;
-    animation: MovimientoObtaculos 5s linear infinite;
+    animation: MovimientoObtaculos 2s linear infinite;
 }
 #Murcielago img {
     width: 100%;
