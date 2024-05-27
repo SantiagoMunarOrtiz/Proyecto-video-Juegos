@@ -3,15 +3,58 @@ const jugador = document.getElementById("jugador");
 const jugadorSaltar = document.getElementById("jugadorSaltar");
 const Murcielago = document.getElementById("Murcielago");
 const fondo = document.getElementById("fondo");
+// Función para mover a Hogo utilizando un bucle de animación
+function moverHogo() {
+    // Obtener las coordenadas actuales de Hogo
+    var hogoRect = Hogo.getBoundingClientRect();
+    var hogoX = hogoRect.left;
+    var hogoY = hogoRect.top;
+
+    // Mover a Hogo
+    Hogo.style.left = (hogoX + 1) + "px"; // Cambia la velocidad de movimiento ajustando este valor
+    Hogo.style.top = (hogoY + 1) + "px"; // Cambia la velocidad de movimiento ajustando este valor
+
+    // Verificar colisión con el jugador
+    verificarColision();
+
+    // Solicitar el siguiente fotograma de animación
+    requestAnimationFrame(moverHogo);
+}
+
+// Función para verificar colisión
+function verificarColision() {
+    // Obtener las coordenadas del jugador
+    var jugadorRect = jugador.getBoundingClientRect();
+
+    // Obtener las coordenadas actuales de Hogo
+    var hogoRect = Hogo.getBoundingClientRect();
+
+    // Verificar si hay colisión
+    if (
+        jugadorRect.left < hogoRect.right &&
+        jugadorRect.right > hogoRect.left &&
+        jugadorRect.top < hogoRect.bottom &&
+        jugadorRect.bottom > hogoRect.top
+    ) {
+        // Si hay colisión, mostrar la ventana emergente
+        alert("¡Perdiste! :(");
+    }
+}
+
+// Iniciar el movimiento de Hogo
+moverHogo();
+
 
 document.addEventListener("DOMContentLoaded", function() {
     jugadorSaltar.addEventListener("click", function(){
         jugador.classList.add("jugadorSaltar");
         setTimeout(function(){
             jugador.classList.remove("jugadorSaltar");
+            verificarColision(); // Verificar colisión después de mover al jugador
         }, 1000); 
     });
 });
+
     BotonPausa.addEventListener("click", ()=>{
         Pausa(); 
     })
@@ -41,61 +84,24 @@ function Reanudar(){
     Hogo.classList.add("Reinicio_Obstaculos");  
     Play();  
 }
-
-function Perder(jugador, obstaculo) {
-  var Perder=false;
-  if(obstaculo.x + obstaculo.width >= jugador.x && obstaculo.x < jugador.x + jugador.width){
-    if(obstaculo.y + obstaculo.height >= jugador.y && obstaculo.y < jugador.y + jugador.height){
-        Perder=true;
-     }
-  }
-
-  if(obstaculo.x <= jugador.x && obstaculo.x + obstaculo.width >= jugador.x + jugador.width){
-    if(obstaculo.y <= jugador.y && obstaculo.y + obstaculo.height >= jugador.y + jugador.height){
-        Perder=true;
-}
-  }
-
-  if(jugador.x <= obstaculo.x && jugador.x + jugador.width >= obstaculo.x + obstaculo.width){
-    if(jugador.y<= obstaculo.y && jugador.y + jugador.height >= obstaculo.y + obstaculo.height){
-        Perder=true;
-}
-  }
-return Perder;
-}
-function VerificarPerder() {
-    if (Perder(jugador, Hogo)) {
-        console.log("¡Perdiste!");
-        alert("Perdiste");
-    } else {
-        console.log("¡Sigue jugando!");
-    }
-}
-VerificarPerder() ;
-
 function irANiveles() {
     window.location.href = "Niveles.html";
 }
-
 function continuarNivel() {
     window.location.href = "Juego.html";
 }
-
 function Comentario() {
     window.location.href = "Comentarios.html";
 }
-
 function Home() {
     window.location.href = "Home.html";
 }
-
 function Registro() {
     window.location.href = "Registro.html";
 }
 function InciarSesion() {
     window.location.href = "IniciarSesion.html";
 }
-
 function Sumas() {
     window.location.href = "Sumas.html";
 }

@@ -57,8 +57,10 @@ body {
     bottom: 10px;
     left: 500px;
     top:650px ; 
-    animation: MovimientoObtaculos 5s linear infinite;
+    animation: MovimientoObtaculos 3s linear infinite;
+
 }
+
 #Hogo img {
     width: 100px;
     height: 100px;
@@ -70,7 +72,7 @@ body {
     bottom: 10px;
     left: 500px;
     top: 350px;
-    animation: MovimientoObtaculos 2s linear infinite;
+    animation: MovimientoObtaculos 5s linear infinite;
 }
 #Murcielago img {
     width: 100%;
