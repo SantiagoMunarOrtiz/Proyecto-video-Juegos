@@ -20,13 +20,21 @@ const ctx = canvas.getContext('2d')
 class Sprite {
     constructor({animations = [,data]}){
         this.animations = animations
-        this.animations = "idle"
+        this.animations = "walk"
         this.frame = {}
         this.frameIndex = -1 
         this.data = data
 
     }
     advance(){
-        if)frames
+      if(frames % 8 ===0){
+        this.frameNames = this.animations[this.animation].frames
+      }
+      if(this.frameIndex + 1 >= this.frameNames.length){
+        this.frameIndex = 0
+      }else {
+        this.frameIndex++
+      }
+      this.frame = this.data 
     }
 }
